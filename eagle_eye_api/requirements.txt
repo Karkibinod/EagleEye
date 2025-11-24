@@ -1,0 +1,22 @@
+# Web Framework
+Flask>=2.3.0
+gunicorn>=21.2.0 # Production WSGI server
+Flask-CORS>=4.0.0
+
+# Database and ORM (PostgreSQL/PostGIS)
+SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0
+GeoAlchemy2>=0.14.0
+alembic>=1.12.0 # Database Migrations
+
+# Environment & Security
+python-dotenv>=1.0.0
+passlib[bcrypt]>=1.7.4 # Password hashing
+PyJWT>=2.8.0
+cryptography>=41.0.0
+
+# External APIs
+googlemaps>=4.10.0
+
+# Data Validation
+pydantic>=2.0.0
