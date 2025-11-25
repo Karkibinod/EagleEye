@@ -27,13 +27,15 @@ def upgrade() -> None:
         sa.Column('name', sa.String(), nullable=False),
         sa.Column('email', sa.String(), nullable=False),
         sa.Column('hashed_password', sa.String(), nullable=False),
-        sa.Column('role', sa.Enum('STUDENT', 'FACULTY', 'STAFF', 'VISITOR', 'ADMIN', name='userrole', create_type=False), nullable=False),
+        sa.Column('role', sa.Enum('STUDENT', 'FACULTY', 'STAFF', 'VISITOR',
+                  'ADMIN', name='userrole', create_type=False), nullable=False),
         sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_users_id'), 'users', ['id'], unique=False)
-    op.create_index(op.f('ix_users_user_id'), 'users', ['user_id'], unique=True)
+    op.create_index(op.f('ix_users_user_id'),
+                    'users', ['user_id'], unique=True)
     op.create_index(op.f('ix_users_email'), 'users', ['email'], unique=True)
-    
+
     # Create preferences table
     op.create_table(
         'preferences',
